@@ -33,39 +33,34 @@
 <header>
 	<!-- Logo-->
 
-	<div class="logo first twoThirds">
+	<div class="logo">
 		<img src="images/logo-01.png" height="100px" alt="logo">
 	</div>
-	<div class="signIn last oneThird">
-		<h2>Already Have a Login?<br></h2>
-		<a href="#"><button id="registerButton">Sign In!</button></a>
+	<div class="signIn">
+		<div class="toggleLogin">
+			<form id = "signInForm"  method="post" action="">
+				<ul>
+					<li>
+						<label class="description" for="element_1">Username</label>
+						<div>
+							<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value=""/>
+						</div>
+					</li>
+					<li id = 'password'>
+						<label class="last" for="element_2">Password </label>
+						<div>
+							<input id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" value=""/>
+						</div>
+					</li>
 
-		<form id="toggleLogin" class=""  method="post" action="">
-			<div class="formDescription">
-				<h2>Login</h2>
-			</div>
-			<ul>
+					<li class="buttons">
+						<input type="hidden" name="form_id" value="" />
 
-				<li>
-					<label class="description" for="element_1">Username</label>
-					<div>
-						<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value=""/>
-					</div>
-				</li>
-				<li>
-					<label class="description" for="element_2">Password </label>
-					<div>
-						<input id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" value=""/>
-					</div>
-				</li>
-
-				<li class="buttons">
-					<input type="hidden" name="form_id" value="" />
-
-					<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
-				</li>
-			</ul>
-		</form>
+						<input id="saveForm" class="button" type="submit" name="submit" value="Submit" />
+					</li>
+				</ul>
+			</form>
+		</div>
 	</div>
 	<!--End Header-->
 </header>

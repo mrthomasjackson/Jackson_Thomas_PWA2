@@ -1,4 +1,4 @@
-header, body {
+body {
     display: block;
     overflow: visible;
 }
@@ -10,10 +10,10 @@ body {
     background-color: #3e606f;
 }
 header {
-    width: 100%;
-    max-height: 100%;
+    width: 960px;
+    height: 120px;
     background-color: #d1dbbd;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .logo {
@@ -21,20 +21,25 @@ header {
     float: left;
     padding-left: 10px;
     padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .signIn {
-    text-align: right;
+    text-align: left;
     padding-right: 10px;
-}
-
-.signIn button {
     display: block;
     float: right;
 }
 
+#signInForm ul li {
+    display: block;
+    float: left;
+    margin-left: 10px;
+}
+
+
 .twoThirds {
-    width: 60.666666%;
+    width: 66.666666%;
     float: left;
     display: block;
 }
@@ -49,9 +54,6 @@ header {
     clear: right;
 }
 
-#toggleLogin {
-    display: none;
-}
 
 footer {
     display: block;
@@ -71,8 +73,8 @@ footer {
     display: block;
     float: left;
     clear: right;
-    width: 97.916668%;
-    padding: 1.041666%;
+    width: 960px;
+    padding: 10px;
     background-image: url("../images/connectCTA.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
@@ -85,23 +87,27 @@ footer {
 
 main {
     background-color: #FCFFF5;
-    padding: 10px;
+    overflow: hidden;
+    width: 960px;
 }
 
-#signUp li {
+form li {
     list-style: none;
-    display: inline-block;
 }
 
-.floatLeft {
-    float: left;
+h1 {
+    line-height: 200%;
+}
+
+.formDescription {
+    line-height: 1%;
 }
 
 #form_container {
     width: 100%;
 }
 
-button{
+button, .button{
     color: #fff !important;
     word-spacing: 0.25em;
     font-family: 'Open Sans', sans-serif;
@@ -115,23 +121,23 @@ button{
     margin-bottom: 18px;
     text-decoration: none;
 }
-button:visited{
+button, .button:visited{
     color: #fff;
 }
-button{
+button, .button{
     padding: 6px 12px 5px;
     font-size: 11px;
     color: #fff;
     text-shadow: none;
 }
-button:hover{
+button, .button:hover{
     color: rgba(255,255,255, 0.75);
     text-decoration: none;
     -webkit-box-shadow:inset 0 10px 20px rgba(255,255,255, 0.10);
     -moz-box-shadow: inset 0 10px 20px rgba(255,255,255, 0.10);
     box-shadow: inset 0 10px 20px rgba(255,255,255, 0.10);
 }
-button:active {
+button, .button:active {
     -webkit-box-shadow: inset 0 2px 2px rgba(0,0,0, 0.3), inset 0 10px 20px rgba(0,0,0, 0.08);
     -moz-box-shadow: inset 0 2px 2px rgba(0,0,0, 0.3), inset 0 10px 20px rgba(0,0,0, 0.08);
     box-shadow: inset 0 2px 2px rgba(0,0,0, 0.3), inset 0 10px 20px rgba(0,0,0, 0.08);

@@ -15,7 +15,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-	<title>My Guys Landscaping</title>
+	<title> Welcome to MyCommunity.com</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 	
@@ -33,23 +33,14 @@
 <header>
 	<!-- Logo-->
 
-	<div id="logo">
-		<img src="images/logo-01.png" height="50px" alt="logo">
+	<div class="logo first twoThirds">
+		<img src="images/logo-01.png" height="100px" alt="logo">
 	</div>
-	<!--End Header-->
-</header>
+	<div class="signIn last oneThird">
+		<h2>Already Have a Login?<br></h2>
+		<a href="#"><button id="registerButton">Sign In!</button></a>
 
-	<main>
-		<!--CTA-->
-		<div id="CTA">
-				<a href="register.html">Sign Up</a>
-				<h1>Register Today!</h1>
-				<p><a href="register.html">Sign up</a>  to become part of the My Guys team!</p>
-		</div>
-		<div id="login">
-			<h2>Already Have An Account?</h2>
-			<h3>Sign In</h3>
-			<form id="loginForm" class=""  method="post" action="">
+		<form id="toggleLogin" class=""  method="post" action="">
 			<div class="formDescription">
 				<h2>Login</h2>
 			</div>
@@ -62,11 +53,11 @@
 					</div>
 				</li>
 				<li>
-				<label class="description" for="element_2">Password </label>
-				<div>
-					<input id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" value=""/>
-				</div>
-			</li>
+					<label class="description" for="element_2">Password </label>
+					<div>
+						<input id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" value=""/>
+					</div>
+				</li>
 
 				<li class="buttons">
 					<input type="hidden" name="form_id" value="" />
@@ -74,11 +65,27 @@
 					<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
 				</li>
 			</ul>
-			</form>
+		</form>
+	</div>
+	<!--End Header-->
+</header>
+
+	<main>
+		<!--CTA-->
+		<div class="last twoThirds cta">
+			<div class = "ctaMessage">
+				<h1>Connect <br>Collaborate <br>Celebrate the Wins!</h1>
+			</div>
+			<div class="subTitle" >
+				<button><a href="register.html">Register</a></button>
+				<p><a href="#">Terms & Conditions.</a></p>
+			</div>
 		</div>
 	</main>
 
-	
+<footer>
+	<div class="copyright"><p>Thomas F Jackson 2015</p></div>
+</footer>
 	
 	
 	<!-- jquery -->

@@ -1,26 +1,143 @@
 header, body {
     display: block;
+    overflow: visible;
 }
 
 body {
     width: 960px;
     margin-left: auto;
     margin-right: auto;
+    background-color: #3e606f;
 }
 header {
     width: 100%;
-    height: 50px;
-    background-color: white;
-    color: navy;
+    max-height: 100%;
+    background-color: #d1dbbd;
+    overflow: auto;
 }
-#welcomeMessage{
+
+.logo {
+    display: block;
+    float: left;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.signIn {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.signIn button {
     display: block;
     float: right;
 }
-#logo {
+
+.twoThirds {
+    width: 60.666666%;
+    float: left;
     display: block;
+}
+
+.oneThird {
+    width: 33.333333%;
+    float: right;
+    display: block;
+}
+
+.last {
+    clear: right;
+}
+
+#toggleLogin {
+    display: none;
+}
+
+footer {
+    display: block;
+    width: 960px;
+    margin-top: 40px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.cta p, button {
+    display: inline-block;
     float: left;
 }
+
+.cta {
+
+    display: block;
+    float: left;
+    clear: right;
+    width: 97.916668%;
+    padding: 1.041666%;
+    background-image: url("../images/connectCTA.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 350px;
+}
+
+.hide {
+    display: none;
+}
+
+main {
+    background-color: #FCFFF5;
+    padding: 10px;
+}
+
+#signUp li {
+    list-style: none;
+    display: inline-block;
+}
+
+.floatLeft {
+    float: left;
+}
+
+#form_container {
+    width: 100%;
+}
+
+button{
+    color: #fff !important;
+    word-spacing: 0.25em;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    border: none;
+    line-height: 22px;
+    padding: 12px 13px 11px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 18px;
+    text-decoration: none;
+}
+button:visited{
+    color: #fff;
+}
+button{
+    padding: 6px 12px 5px;
+    font-size: 11px;
+    color: #fff;
+    text-shadow: none;
+}
+button:hover{
+    color: rgba(255,255,255, 0.75);
+    text-decoration: none;
+    -webkit-box-shadow:inset 0 10px 20px rgba(255,255,255, 0.10);
+    -moz-box-shadow: inset 0 10px 20px rgba(255,255,255, 0.10);
+    box-shadow: inset 0 10px 20px rgba(255,255,255, 0.10);
+}
+button:active {
+    -webkit-box-shadow: inset 0 2px 2px rgba(0,0,0, 0.3), inset 0 10px 20px rgba(0,0,0, 0.08);
+    -moz-box-shadow: inset 0 2px 2px rgba(0,0,0, 0.3), inset 0 10px 20px rgba(0,0,0, 0.08);
+    box-shadow: inset 0 2px 2px rgba(0,0,0, 0.3), inset 0 10px 20px rgba(0,0,0, 0.08);
+}
+
+
 /*----- Tabs -----*/
 .tabs {
     width:100%;
@@ -58,8 +175,8 @@ header {
 }
 
 li.active a, li.active a:hover {
-    background:#fff;
-    color:#4c4c4c;
+    background:#193441;
+    color: #fff;
 }
 
 /*----- Content of Tabs -----*/
@@ -67,7 +184,9 @@ li.active a, li.active a:hover {
     padding:15px;
     border-radius:3px;
     box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
-    background:#fff;
+    background: #193441;
+    margin-top: -32px;
+    color: #ffffff;
 }
 
 .tab {

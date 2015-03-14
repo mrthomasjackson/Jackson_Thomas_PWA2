@@ -34,7 +34,7 @@
 	<!-- Logo-->
 
 	<div class="logo">
-		<img src="images/logo-01.png" height="100px" alt="logo">
+		<a href="index.html"><img src="images/logo-01.png" height="100px" alt="logo"></a>
 	</div>
 	<div class="signIn">
 		<div class="toggleLogin">
@@ -42,13 +42,13 @@
 				<ul>
 					<li>
 						<label class="description" for="element_1">Username</label>
-						<div>
+						<div data-tip-type = "text" data-tip-source = "Enter Your First Name" class="tooltip">
 							<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value=""/>
 						</div>
 					</li>
 					<li id = 'password'>
 						<label class="last" for="element_2">Password </label>
-						<div>
+						<div data-tip-type = "text" data-tip-source = "Enter Your Password" class="tooltip">
 							<input id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" value=""/>
 						</div>
 					</li>
@@ -81,12 +81,42 @@
 <footer>
 	<div class="copyright"><p>Thomas F Jackson 2015</p></div>
 </footer>
-	
+
+<div id="tooltip_container">
+	This is my tooltip.
+</div>
 	
 	<!-- jquery -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<!-- plugins -->
+<script>
+	$(document).ready(function (){
+		$('.cta').mouseenter(function(){
+			$(this).animate({'background-size': '150%'},5000)
+		});
+		$('.tooltip').mouseover(function(e){
+			if ( $(this).attr('data-tip-type') == 'text' ){
+				$('#tooltip_container').html($(this).attr('data-tip-source'));
+			}
 
+			$('#tooltip_container').css('display', 'block');
+
+		}).mousemove(function(e){
+
+			var toolTipWidth = $('#tooltip_container').outerWidth();
+			var tooltipHeight = $('#tooptip_container').outerHeight();
+
+			$('#tooltip_container').css('left',(e.pageX-20)+'px');
+			$('#tooltip_container').css('top',(e.pageY+20)+'px');
+
+		}).mouseout(function(e){
+			$('#tooltip_container').css('display', 'none').html('');
+		});
+
+
+
+	});
+</script>
 	
 	<!-- main -->
 	<script type="text/javascript" src="js/main.js"></script>

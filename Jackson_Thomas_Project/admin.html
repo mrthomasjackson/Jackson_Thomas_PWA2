@@ -34,74 +34,88 @@
     <!-- Logo-->
 
     <div class="logo first twoThirds">
-        <img src="images/logo-01.png" height="100px" alt="logo">
+        <a href="index.html"><img src="images/logo-01.png" height="100px" alt="logo"></a>
     </div>
-    <div class="signIn last oneThird hide">
-        <h2>Need an Account?<br></h2>
-        <a href="#"><button id="registerButton">Sign Up!</button></a>
-
-        <form id="toggleLogin" class=""  method="post" action="">
-            <div class="formDescription">
-                <h2>Login</h2>
-            </div>
-            <ul>
-
-                <li>
-                    <label class="description" for="element_1">Username</label>
-                    <div>
-                        <input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value=""/>
-                    </div>
-                </li>
-                <li>
-                    <label class="description" for="element_2">Password </label>
-                    <div>
-                        <input id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" value=""/>
-                    </div>
-                </li>
-
-                <li class="buttons">
-                    <input type="hidden" name="form_id" value="" />
-
-                    <input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
-                </li>
-            </ul>
-        </form>
+    <div id="welcomeUser">
+        <h2>Welcome User</h2>
+        <button class = "signOut">Sign Out</button>
     </div>
     <!--End Header-->
 </header>
 
 <main> 
     <div id="welcome"> 
-        <h1>My Guys Dashboard</h1> 
-        <h2>Create and manage your appointments!</h2> 
+        <h1>My Community Dashboard</h1> 
+        <h2>Stay involved with your community!</h2> 
     </div> 
     <div class="tabs"> 
         <ul class="tab-links"> 
             <li class="active">
-                <a href="#tab1">Tab #1</a>
+                <a href="#tab1">My Communities</a>
             </li> 
             <li>
-                <a href="#tab2">Tab #2</a>
+                <a href="#tab2">My Events</a>
             </li> 
             <li>
-                <a href="#tab3">Tab #3</a>
+                <a href="#tab3">My Friends</a>
             </li> 
         </ul>  
         <div class="tab-content"> 
             <div id="tab1" class="tab active"> 
-                <p>Tab #1 content goes here!</p> 
-                <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum risus ornare mollis.</p> 
+                <p>Community Memberships</p> 
+                <ul>
+                    <li><a href="#">Baldwin Park</a></li>
+                    <li><a href="#">Winter Park</a></li>
+                    <li><a href="#">Orlando Motorcycle Riders</a></li>
+                    <li><a href="#">Bowling Team</a></li>
+                    <li><a href="#">Jackson Family</a></li>
+                </ul>
+                <a href="projects.html"><button>Manage My Community Memberships</button></a>
             </div>  
             <div id="tab2" class="tab"> 
-                <p>Tab #2 content goes here!</p> 
-                <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum risus ornare mollis. In hac habitasse platea dictumst. Ut euismod tempus hendrerit. Morbi ut adipiscing nisi. Etiam rutrum sodales gravida! Aliquam tellus orci, iaculis vel.</p> 
+                <p>Community Events</p> 
+                <ul>
+                    <li><a href="#">Neighborhood Get Together</a><em> - March 21, 2015 @ 6PM</em></li>
+                    <li><a href="#">Winter Park</a><em> - March 21, 2015 @ 6PM</em></li>
+                    <li><a href="#">Orlando Motorcycle Riders</a><em> - March 21, 2015 @ 6PM</em></li>
+                    <li><a href="#">Bowling Team</a><em> - March 21, 2015 @ 6PM</em></li>
+                    <li><a href="#">Jackson Family</a><em> - March 21, 2015 @ 6PM</em></li>
+                </ul>
+                <button>Manage My Community Events</button>
             </div>  
             <div id="tab3" class="tab"> 
-                <p>Tab #3 content goes here!</p> 
-                <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum ri.</p> 
+                <p>My Friends</p> 
+                <ul>
+                    <li><a href="#">Johnny Walker</a><em> - Baldwin Park</em></li>
+                    <li><a href="#">Cindy Crawford</a><em> - Winter Park</em></li>
+                    <li><a href="#">Ralph Lauren</a><em> - Orlando Motorcycle Riders</em></li>
+                    <li><a href="#">Ziggy</a><em></em> - Bowling Team</li>
+                    <li><a href="#">Jean Reno</a><em> - Jackson Family</em></li>
+                </ul>
+                <button>Manage My Friends List</button>
             </div>  
         </div> 
     </div> 
+    <div class="gallery">
+        <h2>My Community Gallery</h2>
+        <ul>
+            <li>
+                <img src="images/onlinecommunities.jpg" width="150px">
+            </li>
+            <li>
+                <img src="images/onlinecommunities.jpg" width="150px">
+            </li>
+            <li>
+                <img src="images/onlinecommunities.jpg" width="150px">
+            </li>
+            <li>
+                <img src="images/onlinecommunities.jpg" width="150px">
+            </li>
+            <li>
+                <img src="images/onlinecommunities.jpg" width="150px">
+            </li>
+        </ul>
+    </div>
 </main>
 
 <footer>

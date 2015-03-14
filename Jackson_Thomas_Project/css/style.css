@@ -1,7 +1,7 @@
 body {
-    display: block;
     overflow: visible;
 }
+
 
 body {
     width: 960px;
@@ -14,6 +14,17 @@ header {
     height: 120px;
     background-color: #d1dbbd;
     overflow: hidden;
+    display: block;
+}
+
+#tooltip_container{
+    color: #ffffff;
+    background-color: rgba(25, 52, 65, 0.85);
+    position: absolute;
+    padding: 20px;
+    max-width: 200px;
+    border-radius: 5px;
+    display: none;
 }
 
 .logo {
@@ -24,11 +35,122 @@ header {
     padding-bottom: 10px;
 }
 
+#welcomeUser {
+    display: block;
+    float: right;
+    padding-right: 10px;
+}
+
+#projectsList {
+    width: 100%;
+    height: 300px;
+    border: groove;
+    display: block;
+}
+
+#projects {
+    display: block;
+}
+
+#projectsHeader > ul > li {
+    list-style: none;
+    display: inline-block;
+}
+
+#addProject {
+    display: block !important;
+    float: left !important;
+    margin: 0 !important;
+}
+
+#projectsModal {
+    border: solid;
+    width: 500px;
+    height: 300px;
+    padding: 10px;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    display: none;
+    z-index: 9999;
+    background-color: #ffffff;
+}
+
+
+#projectsModal button {
+    display: block;
+    float: left;
+    clear: both;
+}
+
+#projectsModal span {
+    display: block;
+    float: left;
+}
+
+#projectsModal form {
+    display: block;
+    float: left;
+}
+
+#projectsModal ul {
+    display: block;
+    float: left;
+    clear: both;
+}
+
+#modalButtons li {
+    display: inline-block !important;
+}
+
+#modalList2 input {
+    visibility: hidden;
+}
+
+#modalList2 li {
+    display: inline-block;
+}
+
+#modalList2 button {
+    background-color: #ffffff !important;
+    color: black !important;
+}
+
+#modalList2 .activeButton {
+    background-color: blue !important;
+    color: #ffffff !important;
+}
+
+#add {
+    background-color: green !important;
+}
+
+#cancel {
+    background-color: red !important;
+}
+
 .signIn {
     text-align: left;
     padding-right: 10px;
     display: block;
     float: right;
+}
+
+.signOut {
+    display: block;
+    float: right;
+    margin-right: 10px;
+}
+
+.gallery > ul > li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 10px;
+    border: groove;
+}
+
+.gallery {
+
 }
 
 #signInForm ul li {
@@ -88,7 +210,8 @@ footer {
 main {
     background-color: #FCFFF5;
     overflow: hidden;
-    width: 960px;
+    width: 940px;
+    padding: 10px;
 }
 
 form li {
@@ -105,6 +228,10 @@ h1 {
 
 #form_container {
     width: 100%;
+}
+
+#welcomeUser button {
+    margin-left: 10px;
 }
 
 button, .button{
@@ -148,6 +275,8 @@ button, .button:active {
 .tabs {
     width:100%;
     display:inline-block;
+    height: auto;
+    overflow: visible;
 }
 
 /*----- Tab Links -----*/
@@ -193,6 +322,7 @@ li.active a, li.active a:hover {
     background: #193441;
     margin-top: -32px;
     color: #ffffff;
+    height: 250px;
 }
 
 .tab {

@@ -34,38 +34,7 @@
     <!-- Logo-->
 
     <div class="logo first twoThirds">
-        <img src="images/logo-01.png" height="100px" alt="logo">
-    </div>
-    <div class="signIn last oneThird hide">
-        <h2>Need an Account?<br></h2>
-        <a href="#"><button id="registerButton">Sign Up!</button></a>
-
-        <form id="toggleLogin" class=""  method="post" action="">
-            <div class="formDescription">
-                <h2>Login</h2>
-            </div>
-            <ul>
-
-                <li>
-                    <label class="description" for="element_1">Username</label>
-                    <div>
-                        <input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value=""/>
-                    </div>
-                </li>
-                <li>
-                    <label class="description" for="element_2">Password </label>
-                    <div>
-                        <input id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" value=""/>
-                    </div>
-                </li>
-
-                <li class="buttons">
-                    <input type="hidden" name="form_id" value="" />
-
-                    <input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
-                </li>
-            </ul>
-        </form>
+        <a href="index.html"><img src="images/logo-01.png" height="100px" alt="logo"></a>
     </div>
     <!--End Header-->
 </header>
@@ -77,58 +46,41 @@
             <p>Register with your community!</p> 
         </div> 
         <ul>  
-            <li id="firstName" > 
+            <li> 
                 <label class="description" for="element_1">First Name </label> 
-                <div> 
+                <div data-tip-type = "text" data-tip-source = "Enter Your First Name" class="tooltip"> 
                     <input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value=""/> 
                 </div> 
             </li>
             <li id="lastName" > 
                 <label class="description" for="element_2">Last name </label> 
-                <div> 
+                <div data-tip-type = "text" data-tip-source = "Enter Your Last Name" class="tooltip"> 
                     <input id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" value=""/> 
                 </div> 
             </li>
-            <li id="li_3" > 
+            <li id="emailAddress" > 
                 <label class="description last" for="element_3">Username </label> 
-                <div> 
+                <div data-tip-type = "text" data-tip-source = "Enter Your Username" class="tooltip"> 
                     <input id="element_3" name="element_3" class="element text medium" type="text" maxlength="255" value=""/> 
                 </div> 
             </li>
-            <li id="li_4" > 
+            <li id="username" > 
                 <label class="description" for="element_4">Email Address </label> 
-                <div> 
+                <div data-tip-type = "text" data-tip-source = "Enter Your Email Address" class="tooltip"> 
                     <input id="element_4" name="element_4" class="element text medium" type="text" maxlength="255" value=""/> 
                 </div> 
             </li>
-            <li id="li_5" > 
-                <label class="description" for="element_5">Confirm Email </label> 
-                <div> 
+            <li id="password" > 
+                <label class="description" for="element_5">Password </label> 
+                <div data-tip-type = "text" data-tip-source = "Choose A Password" class="tooltip"> 
                     <input id="element_5" name="element_5" class="element text medium" type="text" maxlength="255" value=""/> 
                 </div> 
             </li>
-            <li id="li_6" > 
-                <label class="description" for="element_6">Password </label> 
-                <div> 
-                    <input id="element_6" name="element_6" class="element text medium" type="text" maxlength="255" value=""/> 
-                </div> 
-            </li>
-            <li id="li_7" > 
-                <label class="description" for="element_7">Confirm Password </label> 
-                <div> 
-                    <input id="element_7" name="element_7" class="element text medium" type="text" maxlength="255" value=""/> 
-                </div> 
-            </li>
-            <li id="li_8" > 
-                <label class="description" for="element_8">Checkboxes </label> 
-                <span> 
-                    <input id="element_8_1" name="element_8_1" class="element checkbox" type="checkbox" value="1" /> 
-                    <label class="choice" for="element_8_1">I agree to the terms of mycommunity.com</label>  
-                </span> 
-            </li>  
             <li class="buttons"> 
-                <input type="hidden" name="form_id" value="980701" />  
-                <input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" /> 
+                <label>
+                    <input id="saveForm" class="" type="submit" name="submit" value="Submit" /> 
+                    <p>By submitting, you agree to the <a href="#">terms</a> of mycommunity.com</p>
+                </label>
             </li> 
         </ul> 
     </form> 
@@ -140,10 +92,38 @@
     <div class="copyright"><p>Thomas F Jackson 2015</p></div>
 </footer>
 
+<div id="tooltip_container">
+    This is my tooltip.
+</div>
+
 
 <!-- jquery -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <!-- plugins -->
+<script>
+    $(document).ready(function (){
+    $('.tooltip').mouseover(function(e){
+        if ( $(this).attr('data-tip-type') == 'text' ){
+            $('#tooltip_container').html($(this).attr('data-tip-source'));
+        }
+
+        $('#tooltip_container').css('display', 'block');
+
+    }).mousemove(function(e){
+
+        var toolTipWidth = $('#tooltip_container').outerWidth();
+        var tooltipHeight = $('#tooptip_container').outerHeight();
+
+        $('#tooltip_container').css('left',(e.pageX-20)+'px');
+        $('#tooltip_container').css('top',(e.pageY+20)+'px');
+
+    }).mouseout(function(e){
+        $('#tooltip_container').css('display', 'none').html('');
+    });
+
+    });
+
+</script>
 
 
 <!-- main -->

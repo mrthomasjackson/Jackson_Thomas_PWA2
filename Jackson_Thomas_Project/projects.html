@@ -1,0 +1,203 @@
+<!doctype html>
+
+<!--
+	This is the main index of the application
+	
+	All your script tags should be at the bottom of this file
+	
+	The only html element in the body is the container div
+	Your code should load your page templates into the container
+-->
+
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>My Communities / Projects Page</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS concatenated and minified via ant build script-->
+    <link rel="stylesheet" href="css/style.css?v=1">
+    <!-- end CSS-->
+
+</head>
+<!--Begin Body-->
+<body>
+<!--Begin header-->
+<header>
+    <!-- Logo-->
+
+    <div class="logo first twoThirds">
+        <a href="index.html"><img src="images/logo-01.png" height="100px" alt="logo"></a>
+    </div>
+    <div id="welcomeUser">
+        <h2>Welcome User</h2>
+        <button class = "signOut">Sign Out</button>
+        <button><a href="admin.html">Account Dashboard</a></button>
+    </div>
+    <!--End Header-->
+</header>
+
+<main> 
+    <div id="projects"> 
+        <div id="projectsHeader">
+            <ul>
+                <li>
+                    <h1>Current Communities / Projects</h1> 
+                </li>
+                <li><button id="addProject">Add Community / Project</button></li>
+            </ul>
+
+        </div>
+        <div id="projectsList">
+            <em>Project list inside <strong>this</strong> box.</em>
+        </div>
+        <div id="hideBackground">
+
+        </div>
+    </div> 
+</main>
+
+<div id="projectsModal">
+            <span>
+                <p>
+                    Add Community / Project
+                </p>
+            </span>
+
+    <form id="addProjectForm">
+        <ul id="modalList1">
+            <li>
+                <div data-tip-type = "text" data-tip-source = "Enter a community name" class="tooltip">
+                    Community / Project Name : <input  type="text" placeholder="Enter Name" autofocus="">
+                </div>
+
+            </li>
+            <li>
+                <div data-tip-type = "text" data-tip-source = "Enter a short description" class="tooltip">
+                    Community / Project Description : <input type="text" placeholder="Enter Description">
+                </div>
+
+            </li>
+            <li>
+                <div data-tip-type = "text" data-tip-source = "Select the date" class="tooltip">
+                    Date Joined / Due Date : <input type="text" placeholder="Enter Date">
+                </div>
+
+            </li>
+        </ul>
+        <ul id="modalList2">
+            <li>
+                <label>
+                    <input type="radio">
+                    <button class="radioButton activeButton">Creator</button>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="radio">
+                    <button class="radioButton">Administrator</button>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="radio">
+                    <button class="radioButton">View / Edit</button>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="radio">
+                    <button class="radioButton">View Only</button>
+                </label>
+            </li>
+        </ul>
+    </form>
+    <ul id="modalButtons">
+        <li>
+            <button id="add">Add</button>
+        </li>
+        <li>
+            <button id="cancel">Cancel</button>
+        </li>
+    </ul>
+    <div id="tooltip_container">
+        This is my tooltip.
+    </div>
+</div>
+
+<footer>
+    <div class="copyright"><p>Thomas F Jackson 2015</p></div>
+</footer>
+
+
+
+<!-- jquery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- plugins -->
+<script>
+
+    $(document).ready(function() {
+        $('#addProject').on('click', function () {
+          $('#projectsModal').show(500);
+          $('main').toggle(500);
+        });
+        $('#cancel').on('click', function(){
+            $('#projectsModal').hide(500);
+            $('main').toggle(500);
+        });
+        $('.radioButton').mouseenter(function () {
+            $(this).closest('button').addClass('button : hover');
+        });
+        $('.radioButton').mouseleave(function () {
+            $(this).closest('button').removeClass('button : hover');
+        });
+        $('.radioButton').on('click', function (e) {
+           e.preventDefault();
+            $(this).closest('button').toggleClass('activeButton');
+        })
+
+        $('.tooltip').mouseover(function(e){
+            if ( $(this).attr('data-tip-type') == 'text' ){
+                $('#tooltip_container').html($(this).attr('data-tip-source'));
+            }
+
+            $('#tooltip_container').css('display', 'block');
+
+        }).mousemove(function(e){
+
+            var toolTipWidth = $('#tooltip_container').outerWidth();
+            var tooltipHeight = $('#tooptip_container').outerHeight();
+
+            $('#tooltip_container').css('left',(e.pageX-425)+'px');
+            $('#tooltip_container').css('top',(e.pageY-250)+'px');
+
+        }).mouseout(function(e){
+            $('#tooltip_container').css('display', 'none').html('');
+        });
+});
+
+</script>
+
+<!-- main -->
+<script type="text/javascript" src="js/main.js"></script>
+<!-- End of Body-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

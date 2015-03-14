@@ -1,3 +1,4 @@
+/*----- HTML 5 Containers -----*/
 body {
     overflow: visible;
 }
@@ -17,6 +18,68 @@ header {
     display: block;
 }
 
+main {
+    background-color: #FCFFF5;
+    overflow: hidden;
+    width: 940px;
+    padding: 10px;
+}
+
+footer {
+    display: block;
+    width: 960px;
+    margin-top: 40px;
+    text-align: center;
+    color: #ffffff;
+}
+
+h1 {
+    line-height: 200%;
+}
+
+/*----- Buttons -----*/
+
+#welcomeUser button {
+    margin-left: 10px;
+}
+
+button, .button{
+    color: #fff !important;
+    word-spacing: 0.25em;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    border: none;
+    line-height: 22px;
+    padding: 12px 13px 11px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 18px;
+    text-decoration: none;
+}
+button, .button:visited{
+    color: #fff;
+}
+button, .button{
+    padding: 6px 12px 5px;
+    font-size: 11px;
+    color: #fff;
+    text-shadow: none;
+}
+button, .button:hover{
+    color: rgba(255,255,255, 0.75);
+    text-decoration: none;
+    -webkit-box-shadow:inset 0 10px 20px rgba(255,255,255, 0.10);
+    -moz-box-shadow: inset 0 10px 20px rgba(255,255,255, 0.10);
+    box-shadow: inset 0 10px 20px rgba(255,255,255, 0.10);
+}
+button, .button:active {
+    -webkit-box-shadow: inset 0 2px 2px rgba(0,0,0, 0.3), inset 0 10px 20px rgba(0,0,0, 0.08);
+    -moz-box-shadow: inset 0 2px 2px rgba(0,0,0, 0.3), inset 0 10px 20px rgba(0,0,0, 0.08);
+    box-shadow: inset 0 2px 2px rgba(0,0,0, 0.3), inset 0 10px 20px rgba(0,0,0, 0.08);
+}
+
+/*----- Tooltips -----*/
 #tooltip_container{
     color: #ffffff;
     background-color: rgba(25, 52, 65, 0.85);
@@ -26,7 +89,7 @@ header {
     border-radius: 5px;
     display: none;
 }
-
+/*----- Classes -----*/
 .logo {
     display: block;
     float: left;
@@ -34,6 +97,70 @@ header {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.signIn {
+    text-align: left;
+    padding-right: 10px;
+    display: block;
+    float: right;
+}
+
+.signOut {
+    display: block;
+    float: right;
+    margin-right: 10px;
+}
+
+.gallery > ul > li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 10px;
+    border: groove;
+}
+
+.gallery {
+
+}
+.twoThirds {
+    width: 66.666666%;
+    float: left;
+    display: block;
+}
+
+.oneThird {
+    width: 33.333333%;
+    float: right;
+    display: block;
+}
+
+.last {
+    clear: right;
+}
+
+
+
+.cta p, button {
+    display: inline-block;
+    float: left;
+}
+
+.cta {
+
+    display: block;
+    float: left;
+    clear: right;
+    width: 960px;
+    padding: 10px;
+    background-image: url("../images/connectCTA.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 350px;
+}
+
+.hide {
+    display: none;
+}
+
+/*----- ID's -----*/
 
 #welcomeUser {
     display: block;
@@ -129,29 +256,7 @@ header {
     background-color: red !important;
 }
 
-.signIn {
-    text-align: left;
-    padding-right: 10px;
-    display: block;
-    float: right;
-}
 
-.signOut {
-    display: block;
-    float: right;
-    margin-right: 10px;
-}
-
-.gallery > ul > li {
-    list-style: none;
-    display: inline-block;
-    margin-left: 10px;
-    border: groove;
-}
-
-.gallery {
-
-}
 
 #signInForm ul li {
     display: block;
@@ -160,67 +265,15 @@ header {
 }
 
 
-.twoThirds {
-    width: 66.666666%;
-    float: left;
-    display: block;
-}
-
-.oneThird {
-    width: 33.333333%;
-    float: right;
-    display: block;
-}
-
-.last {
-    clear: right;
-}
 
 
-footer {
-    display: block;
-    width: 960px;
-    margin-top: 40px;
-    text-align: center;
-    color: #ffffff;
-}
-
-.cta p, button {
-    display: inline-block;
-    float: left;
-}
-
-.cta {
-
-    display: block;
-    float: left;
-    clear: right;
-    width: 960px;
-    padding: 10px;
-    background-image: url("../images/connectCTA.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    height: 350px;
-}
-
-.hide {
-    display: none;
-}
-
-main {
-    background-color: #FCFFF5;
-    overflow: hidden;
-    width: 940px;
-    padding: 10px;
-}
+/*****FORM CONTAINER****/
 
 form li {
     list-style: none;
 }
 
-h1 {
-    line-height: 200%;
-}
+
 
 .formDescription {
     line-height: 1%;
@@ -230,45 +283,9 @@ h1 {
     width: 100%;
 }
 
-#welcomeUser button {
-    margin-left: 10px;
-}
 
-button, .button{
-    color: #fff !important;
-    word-spacing: 0.25em;
-    font-family: 'Open Sans', sans-serif;
-    text-transform: uppercase;
-    border: none;
-    line-height: 22px;
-    padding: 12px 13px 11px;
-    text-align: center;
-    display: inline-block;
-    margin-top: 5px;
-    margin-bottom: 18px;
-    text-decoration: none;
-}
-button, .button:visited{
-    color: #fff;
-}
-button, .button{
-    padding: 6px 12px 5px;
-    font-size: 11px;
-    color: #fff;
-    text-shadow: none;
-}
-button, .button:hover{
-    color: rgba(255,255,255, 0.75);
-    text-decoration: none;
-    -webkit-box-shadow:inset 0 10px 20px rgba(255,255,255, 0.10);
-    -moz-box-shadow: inset 0 10px 20px rgba(255,255,255, 0.10);
-    box-shadow: inset 0 10px 20px rgba(255,255,255, 0.10);
-}
-button, .button:active {
-    -webkit-box-shadow: inset 0 2px 2px rgba(0,0,0, 0.3), inset 0 10px 20px rgba(0,0,0, 0.08);
-    -moz-box-shadow: inset 0 2px 2px rgba(0,0,0, 0.3), inset 0 10px 20px rgba(0,0,0, 0.08);
-    box-shadow: inset 0 2px 2px rgba(0,0,0, 0.3), inset 0 10px 20px rgba(0,0,0, 0.08);
-}
+
+
 
 
 /*----- Tabs -----*/

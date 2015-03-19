@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<!--Your Name 
+	Date
+    Month
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Weather API</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<style>
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color:#9ED6FF;
+}
+
+#container{
+	width: 90%;
+	margin: 0 auto;
+	height: 600px;
+}
+
+.left {
+	width: 35%;
+	padding: 5%;
+	float: left;
+}
+
+.right {
+	width: 45%;
+	padding: 2%;
+	float: right;
+}
+
+h1 {
+	text-align: center;
+	padding: 2%;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<div id="container">
+<header> 
+	<h1>Weather Underground API</h1>
+    <p class = "location"></p>
+    <p class="current"></p>
+</header>
+
+<div class="left">
+<h2>Your Three Day Forecast Summary</h2>
+<p class="three">
+<!--1. Display the three day Forecast Summary here-->
+</p>
+<h2>Your 10-day forecast summary</h2>
+<p class="tenDay">
+<!--2. Display the 10-day forecast summary feature here-->
+</p>
+</div><!--Closes Leftr-->
+
+
+
+<div class="right">
+<h2>Your Hourly 1-day forecast</h2>
+<p class="hourFore">
+<!--3. Display the Hourly 1-day forecast feature here-->
+</p>
+
+<h2>Your Astronomy Summary</h2>
+<p class="astro">
+<!--4. Display the WU Astronomy feature here-->
+</p>
+
+<h2>Your Almanac for today</h2>
+<p class="almanac">
+<!--5. Display the Almanac for today feature here-->
+</p>
+</div><!--Closes Right-->
+</div><!--Closes Container-->
+
+
+<!--Link to jQuery Library-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script> 
+<script>
+$(document).ready(function($){
+	
+<!--This is an example of how to embed Geolookup. Use your own API key and city location-->	
+	$.ajax({ 
+		url : "http://api.wunderground.com/api/d72a0c0744254caa/geolookup/conditions/q/FL/Orlando.json",
+		dataType : "jsonp", 
+          success : function(parsed_json) { 
+              var location = parsed_json['location']['city'];
+              var state = parsed_json['location']['state'];
+              var temp_f = parsed_json['current_observation']['temp_f'];
+                $(".location").html("Your active weather location is " + location + ", " + state);
+                $(".current").html("Current temperature in " + location + " is: " + temp_f+"ºF");
+              //console.log(location);
+              //console.log(parsed_json);
+          }
+	});
+
+<!--Use your own API key and city location-->
+<!--1.Embed the WU 3-day forecast summary feature.-->
+<!--Your Code Here-->
+    $.ajax({
+        url : "http://api.wunderground.com/api/d72a0c0744254caa/forecast/q/FL/Orlando.json",
+        dataType : "jsonp",
+        success : function(parsed_json) {
+            var title0 = parsed_json['forecast']['txt_forecast']['forecastday']['0']['title'];
+            var conditions0 = parsed_json['forecast']['txt_forecast']['forecastday']['0']['fcttext'];
+            var title1 = parsed_json['forecast']['txt_forecast']['forecastday']['1']['title'];
+            var conditions1 = parsed_json['forecast']['txt_forecast']['forecastday']['1']['fcttext'];
+            var title2 = parsed_json['forecast']['txt_forecast']['forecastday']['2']['title'];
+            var conditions2 = parsed_json['forecast']['txt_forecast']['forecastday']['2']['fcttext'];
+            var title3 = parsed_json['forecast']['txt_forecast']['forecastday']['3']['title'];
+            var conditions3 = parsed_json['forecast']['txt_forecast']['forecastday']['3']['fcttext'];
+            var title4 = parsed_json['forecast']['txt_forecast']['forecastday']['4']['title'];
+            var conditions4 = parsed_json['forecast']['txt_forecast']['forecastday']['4']['fcttext'];
+            var title5 = parsed_json['forecast']['txt_forecast']['forecastday']['5']['title'];
+            var conditions5 = parsed_json['forecast']['txt_forecast']['forecastday']['5']['fcttext'];
+            var title6 = parsed_json['forecast']['txt_forecast']['forecastday']['6']['title'];
+            var conditions6 = parsed_json['forecast']['txt_forecast']['forecastday']['6']['fcttext'];
+            var title7 = parsed_json['forecast']['txt_forecast']['forecastday']['7']['title'];
+            var conditions7 = parsed_json['forecast']['txt_forecast']['forecastday']['7']['fcttext'];
+
+
+            $(".three").html(title0 + " <br>" + conditions0 + " <br><br>"
+                +title1 + " <br>" + conditions1 + " <br><br>"
+                +title2 + " <br>" + conditions2 + " <br><br>"
+                +title3 + " <br>" + conditions3 + " <br><br>"
+                +title4 + " <br>" + conditions4 + " <br><br>"
+                +title5 + " <br>" + conditions5 + " <br><br>"
+                +title6 + " <br>" + conditions6 + " <br><br>"
+                +title7 + " <br>" + conditions7 + " <br><br>"
+            );
+
+            console.log(parsed_json);
+        }
+    });
+
+
+<!--2.Embed the WU 10-day forecast summary feature.-->
+<!--Your Code Here-->
+
+    $.ajax({
+        url : "http://api.wunderground.com/api/d72a0c0744254caa/forecast10day/q/FL/Orlando.json",
+        dataType : "jsonp",
+        success : function(parsed_json) {
+            var tentitle0 = parsed_json['forecast']['simpleforecast']['forecastday']['0']['date']['weekday'];
+            var tenconditions0 = parsed_json['forecast']['simpleforecast']['forecastday']['0']['conditions'];
+            var tentitle1 = parsed_json['forecast']['simpleforecast']['forecastday']['1']['date']['weekday'];
+            var tenconditions1 = parsed_json['forecast']['simpleforecast']['forecastday']['1']['conditions'];
+            var tentitle2 = parsed_json['forecast']['simpleforecast']['forecastday']['2']['date']['weekday'];
+            var tenconditions2 = parsed_json['forecast']['simpleforecast']['forecastday']['2']['conditions'];
+            var tentitle3 = parsed_json['forecast']['simpleforecast']['forecastday']['3']['date']['weekday'];
+            var tenconditions3 = parsed_json['forecast']['simpleforecast']['forecastday']['3']['conditions'];
+            var tentitle4 = parsed_json['forecast']['simpleforecast']['forecastday']['4']['date']['weekday'];
+            var tenconditions4 = parsed_json['forecast']['simpleforecast']['forecastday']['4']['conditions'];
+            var tentitle5 = parsed_json['forecast']['simpleforecast']['forecastday']['5']['date']['weekday'];
+            var tenconditions5 = parsed_json['forecast']['simpleforecast']['forecastday']['5']['conditions'];
+            var tentitle6 = parsed_json['forecast']['simpleforecast']['forecastday']['6']['date']['weekday'];
+            var tenconditions6 = parsed_json['forecast']['simpleforecast']['forecastday']['6']['conditions'];
+            var tentitle7 = parsed_json['forecast']['simpleforecast']['forecastday']['7']['date']['weekday'];
+            var tenconditions7 = parsed_json['forecast']['simpleforecast']['forecastday']['7']['conditions'];
+
+
+            $(".tenDay").html(tentitle0 + " <br>" + tenconditions0 + " <br><br>"
+                    +tentitle1 + " <br>" + tenconditions1 + " <br><br>"
+                    +tentitle2 + " <br>" + tenconditions2 + " <br><br>"
+                    +tentitle3 + " <br>" + tenconditions3 + " <br><br>"
+                    +tentitle4 + " <br>" + tenconditions4 + " <br><br>"
+                    +tentitle5 + " <br>" + tenconditions5 + " <br><br>"
+                    +tentitle6 + " <br>" + tenconditions6 + " <br><br>"
+                    +tentitle7 + " <br>" + tenconditions7 + " <br><br>"
+            );
+
+            console.log(parsed_json);
+        }
+    });
+
+<!--3.Embed the WU Hourly 1-day forecast feature.-->
+<!--Your Code Here-->
+    $.ajax({
+        url : "http://api.wunderground.com/api/d72a0c0744254caa/hourly/q/FL/Orlando.json",
+        dataType : "jsonp",
+        success : function(parsed_json) {
+            console.log(parsed_json);
+            var time000 = parsed_json['hourly_forecast']['0']['FCTTIME']['pretty'];
+            console.log(time000);
+            var time001 = parsed_json['hourly_forecast']['1']['FCTTIME']['pretty'];
+            var time002 = parsed_json['hourly_forecast']['2']['FCTTIME']['pretty'];
+            var time003 = parsed_json['hourly_forecast']['3']['FCTTIME']['pretty'];
+            var time004 = parsed_json['hourly_forecast']['4']['FCTTIME']['pretty'];
+            var time005 = parsed_json['hourly_forecast']['5']['FCTTIME']['pretty'];
+            var time006 = parsed_json['hourly_forecast']['6']['FCTTIME']['pretty'];
+            var time007 = parsed_json['hourly_forecast']['7']['FCTTIME']['pretty'];
+            var time008 = parsed_json['hourly_forecast']['8']['FCTTIME']['pretty'];
+            var time009 = parsed_json['hourly_forecast']['9']['FCTTIME']['pretty'];
+            var time010 = parsed_json['hourly_forecast']['10']['FCTTIME']['pretty'];
+            var time011 = parsed_json['hourly_forecast']['11']['FCTTIME']['pretty'];
+            var time012 = parsed_json['hourly_forecast']['12']['FCTTIME']['pretty'];
+            var time013 = parsed_json['hourly_forecast']['13']['FCTTIME']['pretty'];
+            var time014 = parsed_json['hourly_forecast']['14']['FCTTIME']['pretty'];
+            var time015 = parsed_json['hourly_forecast']['15']['FCTTIME']['pretty'];
+            var time016 = parsed_json['hourly_forecast']['16']['FCTTIME']['pretty'];
+            var time017 = parsed_json['hourly_forecast']['17']['FCTTIME']['pretty'];
+            var time018 = parsed_json['hourly_forecast']['18']['FCTTIME']['pretty'];
+            var time019 = parsed_json['hourly_forecast']['19']['FCTTIME']['pretty'];
+            var time020 = parsed_json['hourly_forecast']['20']['FCTTIME']['pretty'];
+            var time021 = parsed_json['hourly_forecast']['21']['FCTTIME']['pretty'];
+            var time022 = parsed_json['hourly_forecast']['22']['FCTTIME']['pretty'];
+            var time023 = parsed_json['hourly_forecast']['23']['FCTTIME']['pretty'];
+            var time024 = parsed_json['hourly_forecast']['24']['FCTTIME']['pretty'];
+            var time025 = parsed_json['hourly_forecast']['25']['FCTTIME']['pretty'];
+            var time026 = parsed_json['hourly_forecast']['26']['FCTTIME']['pretty'];
+            var time027 = parsed_json['hourly_forecast']['27']['FCTTIME']['pretty'];
+            var time028 = parsed_json['hourly_forecast']['28']['FCTTIME']['pretty'];
+            var time029 = parsed_json['hourly_forecast']['29']['FCTTIME']['pretty'];
+            var time030 = parsed_json['hourly_forecast']['30']['FCTTIME']['pretty'];
+            var time031 = parsed_json['hourly_forecast']['31']['FCTTIME']['pretty'];
+            var time032 = parsed_json['hourly_forecast']['32']['FCTTIME']['pretty'];
+            var time033 = parsed_json['hourly_forecast']['33']['FCTTIME']['pretty'];
+            var time034 = parsed_json['hourly_forecast']['34']['FCTTIME']['pretty'];
+            var time035 = parsed_json['hourly_forecast']['35']['FCTTIME']['pretty'];
+            var forcast000 = parsed_json['hourly_forecast']['0']['condition'];
+            console.log(forcast000);
+            var forcast001 = parsed_json['hourly_forecast']['1']['condition'];
+            var forcast002 = parsed_json['hourly_forecast']['2']['condition'];
+            var forcast003 = parsed_json['hourly_forecast']['3']['condition'];
+            var forcast004 = parsed_json['hourly_forecast']['4']['condition'];
+            var forcast005 = parsed_json['hourly_forecast']['5']['condition'];
+            var forcast006 = parsed_json['hourly_forecast']['6']['condition'];
+            var forcast007 = parsed_json['hourly_forecast']['7']['condition'];
+            var forcast008 = parsed_json['hourly_forecast']['8']['condition'];
+            var forcast009 = parsed_json['hourly_forecast']['9']['condition'];
+            var forcast010 = parsed_json['hourly_forecast']['10']['condition'];
+            var forcast011 = parsed_json['hourly_forecast']['11']['condition'];
+            var forcast012 = parsed_json['hourly_forecast']['12']['condition'];
+            var forcast013 = parsed_json['hourly_forecast']['13']['condition'];
+            var forcast014 = parsed_json['hourly_forecast']['14']['condition'];
+            var forcast015 = parsed_json['hourly_forecast']['15']['condition'];
+            var forcast016 = parsed_json['hourly_forecast']['16']['condition'];
+            var forcast017 = parsed_json['hourly_forecast']['17']['condition'];
+            var forcast018 = parsed_json['hourly_forecast']['18']['condition'];
+            var forcast019 = parsed_json['hourly_forecast']['19']['condition'];
+            var forcast020 = parsed_json['hourly_forecast']['20']['condition'];
+            var forcast021 = parsed_json['hourly_forecast']['21']['condition'];
+            var forcast022 = parsed_json['hourly_forecast']['22']['condition'];
+            var forcast023 = parsed_json['hourly_forecast']['23']['condition'];
+            var forcast024 = parsed_json['hourly_forecast']['24']['condition'];
+            var forcast025 = parsed_json['hourly_forecast']['25']['condition'];
+            var forcast026 = parsed_json['hourly_forecast']['26']['condition'];
+            var forcast027 = parsed_json['hourly_forecast']['27']['condition'];
+            var forcast028 = parsed_json['hourly_forecast']['28']['condition'];
+            var forcast029 = parsed_json['hourly_forecast']['29']['condition'];
+            var forcast030 = parsed_json['hourly_forecast']['30']['condition'];
+            var forcast031 = parsed_json['hourly_forecast']['31']['condition'];
+            var forcast032 = parsed_json['hourly_forecast']['32']['condition'];
+            var forcast033 = parsed_json['hourly_forecast']['33']['condition'];
+            var forcast034 = parsed_json['hourly_forecast']['34']['condition'];
+            var forcast035 = parsed_json['hourly_forecast']['35']['condition'];
+
+
+
+            $('.hourFore').html(
+                    time000 + ' - ' + forcast000 + ' <br>'+
+                time001 + ' - ' + forcast001 + ' <br>'+
+                time002 + ' - ' + forcast002 + ' <br>'+
+                time003 + ' - ' + forcast003 + ' <br>'+
+                time004 + ' - ' + forcast004 + ' <br>'+
+                time005 + ' - ' + forcast005 + ' <br>'+
+                time006 + ' - ' + forcast006 + ' <br>'+
+                time007 + ' - ' + forcast007 + ' <br>'+
+                time008 + ' - ' + forcast008 + ' <br>'+
+                time009 + ' - ' + forcast009 + ' <br>'+
+                time010 + ' - ' + forcast010 + ' <br>'+
+                time011 + ' - ' + forcast011 + ' <br>'+
+                time012 + ' - ' + forcast012 + ' <br>'+
+                time013 + ' - ' + forcast013 + ' <br>'+
+                time014 + ' - ' + forcast014 + ' <br>'+
+                time015 + ' - ' + forcast015 + ' <br>'+
+                time016 + ' - ' + forcast016 + ' <br>'+
+                time017 + ' - ' + forcast017 + ' <br>'+
+                time018 + ' - ' + forcast018 + ' <br>'+
+                time019 + ' - ' + forcast019 + ' <br>'+
+                time020 + ' - ' + forcast020 + ' <br>'+
+                time021 + ' - ' + forcast021 + ' <br>'+
+                time022 + ' - ' + forcast022 + ' <br>'+
+                time023 + ' - ' + forcast023 + ' <br>'+
+                time024 + ' - ' + forcast024 + ' <br>'+
+                time025 + ' - ' + forcast025 + ' <br>'+
+                time026 + ' - ' + forcast026 + ' <br>'+
+                time027 + ' - ' + forcast027 + ' <br>'+
+                time028 + ' - ' + forcast028 + ' <br>'+
+                time029 + ' - ' + forcast029 + ' <br>'+
+                time030 + ' - ' + forcast030 + ' <br>'+
+                time031 + ' - ' + forcast031 + ' <br>'+
+                time032 + ' - ' + forcast032 + ' <br>'+
+                time033 + ' - ' + forcast033 + ' <br>'+
+                time034 + ' - ' + forcast034 + ' <br>'+
+                time035 + ' - ' + forcast035 + ' <br>'
+            );
+        }
+    });
+
+
+<!--4.Embed the WU Astronomy feature.-->
+<!--Your Code Here-->
+
+    $.ajax({
+       url: "http://api.wunderground.com/api/d72a0c0744254caa/astronomy/q/FL/Orlando.json",
+        dataType : "jsonp",
+        success : function(parsed_json){
+            console.log(parsed_json);
+            var phase = parsed_json['moon_phase']['phaseofMoon'];
+
+            $('.astro').html("Moon phase: " + phase);
+        }
+    });
+
+<!--5.Embed the WU Almanac for today feature.-->
+<!--Your Code Here-->
+
+    $.ajax({
+        url: "http://api.wunderground.com/api/d72a0c0744254caa/almanac/q/FL/Orlando.json",
+        dataType : "jsonp",
+        success : function(parsed_json){
+            console.log(parsed_json);
+            var tempHigh = parsed_json['almanac']['temp_high']['normal']['F'];
+            var tempLow = parsed_json['almanac']['temp_low']['normal']['F'];
+
+            $('.almanac').html("The average high temperature is " + tempHigh + ' degrees.' + "<br>" + "The average low temperature is " + tempLow + ' degrees.');
+        }
+    })
+});  //Closes Doc Ready Function
+</script>
+
+
+	
+
+
+	
+
+
+
+</body>
+</html>

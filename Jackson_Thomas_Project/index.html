@@ -25,7 +25,7 @@
 	<!-- CSS concatenated and minified via ant build script-->
 	<link rel="stylesheet" href="css/style.css?v=1">
 	<!-- end CSS-->
-	
+
 </head>
 <!--Begin Body-->
 <body>
@@ -41,22 +41,22 @@
 			<form id = "signInForm"  method="post" action="">
 				<ul>
 					<li>
-						<label class="description" for="element_1">Username</label>
+						<label class="description" for="user">Username</label>
 						<div data-tip-type = "text" data-tip-source = "Enter Your First Name" class="tooltip">
-							<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value=""/>
+							<input id="user" name="element_1" class="element text medium" type="text" maxlength="255" value=""/>
 						</div>
 					</li>
 					<li id = 'password'>
-						<label class="last" for="element_2">Password </label>
+						<label class="last" for="pass">Password </label>
 						<div data-tip-type = "text" data-tip-source = "Enter Your Password" class="tooltip">
-							<input id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" value=""/>
+							<input id="pass" name="element_2" class="element text medium" type="password" maxlength="255" value=""/>
 						</div>
 					</li>
 
 					<li class="buttons">
-						<input type="hidden" name="form_id" value="" />
+						<input type="hidden" name="signinButton" value="" />
 
-						<input id="saveForm" class="button" type="submit" name="submit" value="Submit" />
+						<input id="signinButton" class="button" type="submit" name="submit" value="Submit" />
 					</li>
 				</ul>
 			</form>
@@ -88,6 +88,8 @@
 	
 	<!-- jquery -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+
 	<!-- plugins -->
 <script>
 	$(document).ready(function (){
@@ -119,7 +121,7 @@
 </script>
 	
 	<!-- main -->
-	<script type="text/javascript" src="js/main.js"></script>
+
 <!-- End of Body-->
 </body>
 </html>

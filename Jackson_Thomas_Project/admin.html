@@ -37,8 +37,8 @@
         <a href="index.html"><img src="images/logo-01.png" height="100px" alt="logo"></a>
     </div>
     <div id="welcomeUser">
-        <h2>Welcome User</h2>
-        <button class = "signOut">Sign Out</button>
+        <h2 id="dynamicHello">Welcome User</h2>
+        <input name="logOut" type="button" id="logOut" value="Sign Out"/>
     </div>
     <!--End Header-->
 </header>
@@ -126,7 +126,8 @@
 <!-- jquery -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <!-- plugins -->
-<script>$(document).ready(function() {
+<script>
+    $(document).ready(function() {
 $('.tabs .tab-links a').on('click', function(e)  {
 var currentAttrValue = $(this).attr('href');
 

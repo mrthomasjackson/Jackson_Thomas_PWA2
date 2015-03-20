@@ -37,7 +37,7 @@
         <a href="index.html"><img src="images/logo-01.png" height="100px" alt="logo"></a>
     </div>
     <div id="welcomeUser">
-        <h2>Welcome User</h2>
+        <h2 id="dynamicHello"></h2>
         <button class = "signOut">Sign Out</button>
         <button><a href="admin.html">Account Dashboard</a></button>
     </div>
@@ -57,6 +57,9 @@
         </div>
         <div id="projectsList">
             <em>Project list inside <strong>this</strong> box.</em>
+            <div class="projects">
+
+            </div>
         </div>
         <div id="hideBackground">
 
@@ -75,45 +78,45 @@
         <ul id="modalList1">
             <li>
                 <div data-tip-type = "text" data-tip-source = "Enter a community name" class="tooltip">
-                    Community / Project Name : <input  type="text" placeholder="Enter Name" autofocus="">
+                    Community / Project Name : <input name="projectName" id="projectName"  type="text" placeholder="Enter Name" autofocus="">
                 </div>
 
             </li>
             <li>
                 <div data-tip-type = "text" data-tip-source = "Enter a short description" class="tooltip">
-                    Community / Project Description : <input type="text" placeholder="Enter Description">
+                    Community / Project Description : <input name="projectDescription" id="projectDescription" type="text" placeholder="Enter Description">
                 </div>
 
             </li>
             <li>
                 <div data-tip-type = "text" data-tip-source = "Select the date" class="tooltip">
-                    Date Joined / Due Date : <input type="text" placeholder="Enter Date">
+                    Date Joined / Due Date : <input name="projectDueDate" id="projectDueDate" type="text" placeholder="Enter Date">
                 </div>
 
             </li>
         </ul>
         <ul id="modalList2">
             <li>
-                <label>
-                    <input type="radio">
+                <label for="projectCreator">
                     <button class="radioButton activeButton">Creator</button>
                 </label>
+                <input name="permissions" id="projectCreator" type="radio" value="Creator">
             </li>
             <li>
                 <label>
-                    <input type="radio">
+                    <input name="permissions" id="projectAdministrator" type="radio" value="Administrator">
                     <button class="radioButton">Administrator</button>
                 </label>
             </li>
             <li>
                 <label>
-                    <input type="radio">
+                    <input name="permissions" id="projectViewEdit" type="radio" value="View / Edit">
                     <button class="radioButton">View / Edit</button>
                 </label>
             </li>
             <li>
                 <label>
-                    <input type="radio">
+                    <input name="permissions" id="projectView" value="View Only" type="radio">
                     <button class="radioButton">View Only</button>
                 </label>
             </li>
@@ -121,7 +124,7 @@
     </form>
     <ul id="modalButtons">
         <li>
-            <button id="add">Add</button>
+            <button id="add" value="Add">Add</button>
         </li>
         <li>
             <button id="cancel">Cancel</button>

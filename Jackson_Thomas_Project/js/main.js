@@ -118,6 +118,18 @@
 		e.preventDefault();
 		$(this).closest('li').find('input').attr('checked', true);
 	});
+	$('#registerButton').click(function(e){
+		e.preventDefault();
+		window.location.assign('register.html');
+	});
+	$('#projectsButton').click(function(e){
+		e.preventDefault();
+		window.location.assign('projects.html');
+	});
+	$('#adminButton').click(function(e){
+		e.preventDefault();
+		window.location.assign('admin.html');
+	});
 
 	/* ------------Delete Project ------------- */
 	var projects = function(){

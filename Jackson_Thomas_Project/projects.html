@@ -24,6 +24,7 @@
 
     <!-- CSS concatenated and minified via ant build script-->
     <link rel="stylesheet" href="css/style.css?v=1">
+    <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
     <!-- end CSS-->
 
 </head>
@@ -68,11 +69,7 @@
 </main>
 
 <div id="projectsModal">
-            <span>
-                <p>
-                    Add Community / Project
-                </p>
-            </span>
+            <span>Add Community / Project</span>
 
     <form id="addProjectForm">
         <ul id="modalList1">
@@ -142,7 +139,9 @@
 
 
 <!-- jquery -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="jquery-ui/external/jquery/jquery.js"></script>
+<script src="jquery-ui/jquery-ui.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 <!-- plugins -->
 <script>
 
@@ -183,6 +182,9 @@
 
         }).mouseout(function(e){
             $('#tooltip_container').css('display', 'none').html('');
+        });
+        $( "#projectDueDate" ).datepicker({
+            inline: true
         });
 });
 

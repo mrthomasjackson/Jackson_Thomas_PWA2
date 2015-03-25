@@ -24,6 +24,7 @@
 
     <!-- CSS concatenated and minified via ant build script-->
     <link rel="stylesheet" href="css/style.css?v=1">
+    <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
     <!-- end CSS-->
 
 </head>
@@ -48,20 +49,14 @@
         <h1>My Community Dashboard</h1> 
         <h2>Stay involved with your community!</h2> 
     </div> 
-    <div class="tabs"> 
-        <ul class="tab-links"> 
-            <li class="active">
-                <a href="#tab1">My Communities</a>
-            </li> 
-            <li>
-                <a href="#tab2">My Events</a>
-            </li> 
-            <li>
-                <a href="#tab3">My Friends</a>
-            </li> 
+    <div id="tabs"> 
+        <ul> 
+            <li><a href="#tab1">My Communities</a></li> 
+            <li><a href="#tab2">My Events</a></li> 
+            <li><a href="#tab3">My Friends</a></li> 
         </ul>  
-        <div class="tab-content"> 
-            <div id="tab1" class="tab active"> 
+        <div> 
+            <div id="tab1"> 
                 <p>Community Memberships</p> 
                 <ul>
                     <li><a href="#">Baldwin Park</a></li>
@@ -72,7 +67,7 @@
                 </ul>
                 <button id="projectsButton">Manage My Community Memberships</button></a>
             </div>  
-            <div id="tab2" class="tab"> 
+            <div id="tab2"> 
                 <p>Community Events</p> 
                 <ul>
                     <li><a href="#">Neighborhood Get Together</a><em> - March 21, 2015 @ 6PM</em></li>
@@ -83,7 +78,7 @@
                 </ul>
                 <button>Manage My Community Events</button>
             </div>  
-            <div id="tab3" class="tab"> 
+            <div id="tab3"> 
                 <p>My Friends</p> 
                 <ul>
                     <li><a href="#">Johnny Walker</a><em> - Baldwin Park</em></li>
@@ -124,21 +119,12 @@
 
 
 <!-- jquery -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="jquery-ui/external/jquery/jquery.js"></script>
+<script src="jquery-ui/jquery-ui.js"></script>
 <!-- plugins -->
 <script>
     $(document).ready(function() {
-$('.tabs .tab-links a').on('click', function(e)  {
-var currentAttrValue = $(this).attr('href');
-
-// Show/Hide Tabs
-$('.tabs ' + currentAttrValue).show().siblings().hide();
-
-// Change/remove current tab to active
-$(this).parent('li').addClass('active').siblings().removeClass('active');
-
-e.preventDefault();
-});
+        $( "#tabs" ).tabs();
 });
 </script>
 

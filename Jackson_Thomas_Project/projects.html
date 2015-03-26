@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS concatenated and minified via ant build script-->
-    <link rel="stylesheet" href="css/style.css?v=1">
+    <link rel="stylesheet" href="css/style.css">
     <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
     <!-- end CSS-->
 
@@ -186,7 +186,10 @@
         $( "#projectDueDate" ).datepicker({
             inline: true
         });
-});
+
+        $('.projects').sortable();
+
+    });
 
 </script>
 

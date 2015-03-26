@@ -170,8 +170,7 @@ button, .button:active {
 
 #projectsList {
     width: 100%;
-    height: 300px;
-    border: groove;
+    height: auto;
     display: block;
 }
 
@@ -268,7 +267,18 @@ button, .button:active {
     display: inline;
 }
 
+#projectsList div {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 100px;
+    overflow: visible;
+}
 
+#projectsList button {
+    display: block;
+}
 
 /*****FORM CONTAINER****/
 
